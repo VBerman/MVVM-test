@@ -29,6 +29,16 @@ namespace MVVM_test.MVVM
         }
         public ObservableCollection<Asset> Assets { get; set; }
 
+        private RelayCommand saveChanges;
+
+        public RelayCommand SaveChanges
+        {
+            get { return saveChanges ??  ( saveChanges = new RelayCommand(async obj => 
+            {
+                await DB.Instance.SaveChangesAsync();
+            })); }
+
+        }
 
     }
 }

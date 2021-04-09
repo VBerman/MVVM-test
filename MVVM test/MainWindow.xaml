@@ -11,7 +11,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Assets}" AutoGenerateColumns="False" Grid.Row="1">
             <DataGrid.Columns>
@@ -20,5 +21,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Text="{Binding Path=Assets[0].AssetName, TargetNullValue='das'}" Grid.Row="0"/>
+        <Button Width="125" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Command="{Binding SaveChanges, IsAsync=True}"></Button>
     </Grid>
+   
 </Window>
