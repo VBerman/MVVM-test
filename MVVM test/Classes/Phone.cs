@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MVVM_test.Classes
 {
-    class Phone : INotifyPropertyChanged
+    class Phone
     {
         private string title { get; set; }
         public string Title
@@ -17,17 +17,9 @@ namespace MVVM_test.Classes
             set 
             {
                 title = value;
-                OnPropertyChanged();
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
-        }
+       
     }
 }
