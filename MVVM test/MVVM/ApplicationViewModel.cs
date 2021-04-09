@@ -1,4 +1,5 @@
 ﻿using MVVM_test.Classes;
+using MVVM_test.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,8 +23,12 @@ namespace MVVM_test.MVVM
                 new Phone(){Title="Check2"},
                 new Phone(){Title="Check3"}
             };
+
+            Assets = new ObservableCollection<Asset> (DB.Instance.Assets.ToList());
             
         }
+        public ObservableCollection<Asset> Assets { get; set; }
+        
 
     }
 }

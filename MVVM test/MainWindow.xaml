@@ -13,12 +13,12 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Phones}" AutoGenerateColumns="False" Grid.Row="1">
+        <DataGrid ItemsSource="{Binding Assets}" AutoGenerateColumns="False" Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding AssetName}"/>
                 
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Text="{Binding Path=Phones[0].Title, TargetNullValue='das'}" Grid.Row="0"/>
+        <TextBlock Text="{Binding Path=Assets[0].AssetName, TargetNullValue='das'}" Grid.Row="0"/>
     </Grid>
 </Window>
