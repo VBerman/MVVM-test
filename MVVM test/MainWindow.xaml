@@ -1,0 +1,22 @@
+﻿<Window x:Class="MVVM_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_test" xmlns:classes="clr-namespace:MVVM_test.Classes" d:DataContext="{d:DesignInstance Type=classes:ViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid DataContext="{Binding Instance}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding Phones}" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="{Binding Path=Phones[0].Title, TargetNullValue='das'}" Grid.Row="0"/>
+    </Grid>
+</Window>
