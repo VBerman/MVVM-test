@@ -17,7 +17,7 @@ namespace MVVM_test
     {
         public App()
         {
-            
+            var a = ViewModel.Instance;
         }
     }
 }
