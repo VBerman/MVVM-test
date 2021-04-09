@@ -16,7 +16,7 @@ namespace MVVM_test.MVVM
         public ObservableCollection<Phone> Phones { get; set; }
         public ApplicationViewModel()
         {
-            Phones = new ObservableCollection<Phone>() 
+            Phones = new ObservableCollection<Phone>()
             {
                 new Phone(){Title="Check0"},
                 new Phone(){Title="Check1"},
@@ -24,11 +24,11 @@ namespace MVVM_test.MVVM
                 new Phone(){Title="Check3"}
             };
 
-            Assets = new ObservableCollection<Asset> (DB.Instance.Assets.ToList());
-            
+            Assets = new ObservableCollection<Asset>(DB.Instance.Assets.ToList());
+
         }
         public ObservableCollection<Asset> Assets { get; set; }
-        
+
 
     }
 }
