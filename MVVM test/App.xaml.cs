@@ -18,6 +18,11 @@ namespace MVVM_test
         public App()
         {
             var a = ViewModel.Instance;
+            Window window = new MainWindow { Instance = a };
+            Window window1 = new TestInstanceVIewModel { Instance = a };
+            window.Show();
+            window1.Show();
+
         }
     }
 }

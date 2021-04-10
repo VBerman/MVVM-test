@@ -11,9 +11,22 @@ using System.Threading.Tasks;
 
 namespace MVVM_test.MVVM
 {
-    class ApplicationViewModel
+    class ApplicationViewModel:INotifyPropertyChanged
     {
-        public ObservableCollection<Phone> Phones { get; set; }
+
+        private ObservableCollection<Phone> phone;
+
+        public ObservableCollection<Phone> Phones
+        {
+            get => phone; 
+            set 
+            { 
+                phone = value;
+                OnPropertyChanged("Phones");
+            }
+        }
+
+       
         public ApplicationViewModel()
         {
             Phones = new ObservableCollection<Phone>()
@@ -31,14 +44,23 @@ namespace MVVM_test.MVVM
 
         private RelayCommand saveChanges;
 
+        
+
         public RelayCommand SaveChanges
         {
-            get { return saveChanges ??  ( saveChanges = new RelayCommand(async obj => 
+            get { return saveChanges ?? new RelayCommand(async obj => 
             {
+                
                 await DB.Instance.SaveChangesAsync();
-            })); }
+            }); }
 
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }
