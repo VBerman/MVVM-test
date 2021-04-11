@@ -4,13 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:mvvm="clr-namespace:MVVM_test.MVVM"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:mvvm1="clr-namespace:MVVM_test.Classes"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Source={x:Static mvvm1:ViewModel.Instance}}">
 
-    
-    <Window.DataContext>
-
-        <mvvm:ApplicationViewModel></mvvm:ApplicationViewModel>
-    </Window.DataContext>    
+      
     
     <Grid>
         <Grid.RowDefinitions>
@@ -18,9 +16,9 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Phones}" CurrentCellChanged="DataGrid_CurrentCellChanged">
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Phones, Mode=TwoWay}" CurrentCellChanged="DataGrid_CurrentCellChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title,Mode=TwoWay}"/>
                 
             </DataGrid.Columns>
         </DataGrid>

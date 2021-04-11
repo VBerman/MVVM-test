@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MVVM_test.Classes
 {
-    class Phone:INotifyPropertyChanged
+    public class Phone:INotifyPropertyChanged
     {
         private string title { get; set; }
         public string Title

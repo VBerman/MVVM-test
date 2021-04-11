@@ -19,7 +19,7 @@ namespace MVVM_test.Classes
         }
 
 
-        internal static ApplicationViewModel Instance
+        public static ApplicationViewModel Instance
         {
             get
             {

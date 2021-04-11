@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MVVM_test.MVVM
 {
-    class ApplicationViewModel:INotifyPropertyChanged
+    public class ApplicationViewModel:INotifyPropertyChanged
     {
 
         private ObservableCollection<Phone> phone;

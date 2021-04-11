@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:MVVM_test" xmlns:mvvm="clr-namespace:MVVM_test.MVVM" xmlns:mvvm1="clr-namespace:MVVM_test.Classes"
         mc:Ignorable="d"
         Title="TestInstanceVIewModel" Height="450" Width="800"
-        Name="WindowContext">
+        Name="WindowContext"
+        DataContext="{Binding Source={x:Static mvvm1:ViewModel.Instance}}">
 
 
-    <Grid DataContext="{Binding Source={x:Static local:TestInstanceViewModel},Path=Instance}">
+
+    <Grid>
+
+   
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Phones}">
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Phones,Mode=TwoWay}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title,Mode=TwoWay}"/>
 
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="0"/>
-        <Button Width="125" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" ></Button>
+        <Button Width="125" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding SaveChanges}" Grid.Row="2" ></Button>
     </Grid>
 </Window>
