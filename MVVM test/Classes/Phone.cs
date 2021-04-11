@@ -17,7 +17,7 @@ namespace MVVM_test.Classes
             set 
             {
                 title = value;
-                OnPropertyChanged("Phone");
+                OnPropertyChanged("Title");
             }
         }
 
