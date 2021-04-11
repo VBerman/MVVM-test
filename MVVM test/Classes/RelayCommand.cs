@@ -20,8 +20,10 @@ namespace MVVM_test.Classes
 
         public RelayCommand(Action<object> execute, Func<Object, bool> canExecute = null)
         {
+            
             this.execute = execute;
             this.canExecute = canExecute;
+
         }
         
 
@@ -35,6 +37,7 @@ namespace MVVM_test.Classes
             try
             {
                 this.execute(parameter);
+
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
 ﻿using MVVM_test.Classes;
+using MVVM_test.MVVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace MVVM_test
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = ViewModel.Instance;
+            
+            
         }
     }
 }
